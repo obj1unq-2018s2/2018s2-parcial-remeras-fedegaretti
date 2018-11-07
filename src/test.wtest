@@ -1,0 +1,44 @@
+import remeras.*
+import pedidos.*
+import comercio.*
+describe "Tests punto C" {
+	var disney = new Empresa(
+		derechoDeAutor = 100,
+		tieneConvenio = true)
+	
+	var lisa = new RemeraLisa(
+		talle = 40,
+		color = "blanco")
+	
+	var bordada = new RemeraBordada(
+		talle = 40, 
+		color = "azul", 
+		cantColoresBordado = 4)
+	
+	var sublimada = new RemeraSublimada(
+		talle = 40,
+		color = "negro",
+		altoDibujo = 15,
+		anchoDibujo = 10,
+		empresaPropietaria = disney)
+		
+	var flores = new Sucursal(
+		cantMinDescuento = 10, 
+		pedidosRegistrados = #{})
+	var avellaneda = new Sucursal(
+		cantMinDescuento = 3, 
+		pedidosRegistrados = #{})
+			
+	var comercio = new Comercio(sucursales = #{flores, avellaneda})		
+	
+	fixture{
+		flores.registrarPedido(lisa, 10)
+		avellaneda.registrarPedido(bordada,3)
+	}
+	test "Total Facturado Comercio"{
+		assert.equals(comercio.totalFacturado(), 1500)
+	}
+	test "Total Facturado Flores"{
+		assert.equals(flores.totalFacturado(), 1500)
+	}
+}
