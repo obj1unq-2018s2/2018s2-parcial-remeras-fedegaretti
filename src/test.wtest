@@ -36,9 +36,16 @@ describe "Tests punto C" {
 		avellaneda.registrarPedido(bordada,3)
 	}
 	test "Total Facturado Comercio"{
-		assert.equals(comercio.totalFacturado(), 1500)
+		assert.equals(comercio.totalFacturado(), 1500)//Puse 1500 para ver el resultado
 	}
 	test "Total Facturado Flores"{
-		assert.equals(flores.totalFacturado(), 1500)
+		assert.equals(flores.totalFacturado(), 1500)//Puse 1500 para ver el resultado
 	}
+	test "Pedidos de color Blanco"{
+		assert.equals(comercio.pedidosRealizadosDeColor("blanco"),1)
+	}
+	test "Pedido mas Caro"{
+		assert.equals(comercio.pedidoMasCaro(),flores.pedidosRegistrados().first())
+	}
+	
 }
