@@ -15,6 +15,7 @@ class Comercio {
 		self.pedidosRegistrados().max{ pedido => pedido.precio() }
 		
 	method tallesSinPedidos(){
+		// TODO Esto no hace lo que pide el enunciado, no cumple el objetivo.
 		var rango = new Range(32,48)
 		self.pedidosRegistrados().filter{ pedido => !rango.contains(pedido) }
 	}

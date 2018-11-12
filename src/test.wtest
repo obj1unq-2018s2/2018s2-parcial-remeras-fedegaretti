@@ -24,7 +24,8 @@ describe "Tests punto C" {
 		
 	var flores = new Sucursal(
 		cantMinDescuento = 10, 
-		pedidosRegistrados = #{})
+		pedidosRegistrados = #{}) // TODO esta variable podría tener un valor default para simplificar la instanciación.
+
 	var avellaneda = new Sucursal(
 		cantMinDescuento = 3, 
 		pedidosRegistrados = #{})

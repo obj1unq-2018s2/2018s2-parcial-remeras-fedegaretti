@@ -27,6 +27,8 @@ class Pedido {
 
 class Sucursal {
 	var pedidosRegistrados
+	
+	// TODO Falta getter o property.
 	var cantMinDescuento //CANTIDAD MINIMA DE REMERAS PARA HACER DESCUENTO
 	
 	method pedidosRegistrados() = pedidosRegistrados

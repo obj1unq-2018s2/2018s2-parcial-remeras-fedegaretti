@@ -11,6 +11,7 @@ class RemeraLisa {
 	
 	method costoBaseTalleGrande() = 100 
 	//ESTE METHOD ME QUEDO MUY FEO.
+	// TODO y... sí. Igual vi peores.
 	method costo(){
 		if(self.esColorBasico() and self.esTalleChico()){
 			return self.costoBaseTalleChico()
@@ -73,7 +74,7 @@ class RemeraSublimada inherits RemeraLisa {
 		if(self.esPropiedaDeEmpresa()){
 			return self.cmsCuadrados() * 0.5 + empresaPropietaria.derechoDeAutor()
 		}else
-			return self.cmsCuadrados() * 0.5
+			return self.cmsCuadrados() * 0.5 // TODO Acá también hay código repetido que se podría evitar.
 	}
 		
 	override method costo() = super() + self.costoSublimado()
